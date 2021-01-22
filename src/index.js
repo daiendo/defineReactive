@@ -1,4 +1,5 @@
-import observe from './observe'
+import observe from './observe';
+import Watcher from './Watcher'
 let obj = {
     a: {
         n: {
@@ -9,13 +10,14 @@ let obj = {
 }
 observe(obj)
 // obj.b = 10;
-obj.a.n.m = 10
+// obj.a.n.m = 10
 // console.log(obj.b)
 // console.log(obj)
 //obj.b.push(1,23)
-//console.log(obj.b)
-obj.b.splice(2,1,[99,88])
+// console.log(obj.a.n.m)
+// obj.b.splice(2,1,[99,88])
 // console.log(obj.b)
-
-
-
+new Watcher(obj,'a.n.m',(val)=>{
+    console.log('---',val)
+})
+obj.a.n.m = 10

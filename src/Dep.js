@@ -17,7 +17,6 @@ export default class Dep{
     }
     //通知更新
     notify(){
-        console.log(1)
         const subs = this.subs.slice();
         for (let i = 0; i < subs.length; i++) {
             subs[i].update();
