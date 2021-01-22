@@ -12,9 +12,7 @@ export default function defineReactive(data,key,val){
             return val;
         },
         set(newValue){
-            console.log(key+'属性被设置')
             if(val===newValue){
-                console.log(1)
                 return;
             }
             val = newValue;
